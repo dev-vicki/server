@@ -13,6 +13,8 @@ const path = require("path");
  const authRoute = require("./routes/auth");
  const userRoute = require("./routes/users");
  const postRoute = require("./routes/posts");
+ const conversationRoute = require("./routes/conversation");
+ const messageRoute = require("./routes/message");
 
 
 mongoose.connect(process.env.DATABASE,{
@@ -52,6 +54,8 @@ app.use(morgan("common"));
  app.use("/api/auth", authRoute);
  app.use("/api/users", userRoute);
  app.use("/api/posts", postRoute);
+ app.use("/api/conversation", conversationRoute);
+ app.use("/api/message", messageRoute);
 
 const port = process.env.PORT || 8000;
 
