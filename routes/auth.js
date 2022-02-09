@@ -40,4 +40,15 @@ router.post("/login", async(req,res) => {
     }
 })
 
+
+ // logout
+router.get("/logout", (req,res)=>{
+   try{
+     res.status(200).clearCookie(User);
+   }catch(err){
+       console.log(err);
+   }
+})
+
+
 module.exports = router;
